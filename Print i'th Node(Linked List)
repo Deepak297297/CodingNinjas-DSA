@@ -1,0 +1,17 @@
+// Coding Ninjas solution
+// Linked List
+
+
+public class Solution {
+
+	public static void printIthNode(LinkedListNode<Integer> head, int i){
+		int count = 0;
+		while(count != i && head!=null){
+			head = head.next;
+			count++;
+		}
+		if(count ==i && head!=null){
+			System.out.println(head.data);
+		}
+	}
+}
