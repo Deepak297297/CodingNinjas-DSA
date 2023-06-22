@@ -1,0 +1,27 @@
+// Coding Ninjas Linked List Solution
+
+public class Solution {
+	public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int pos) {
+		if(head == null){
+			return head;
+		}
+		if(pos==0){
+			head = head.next;
+			return head;
+		}
+
+		int count =0;
+		LinkedListNode<Integer> currNode = head;
+		while(count<pos-1 && currNode!=null){
+			currNode = currNode.next;
+			count++;
+		}
+		if(currNode == null){
+			return head;
+		}
+		if(currNode.next!=null){
+			currNode.next = currNode.next.next;
+		}
+		return head;
+	}
+}
