@@ -1,0 +1,24 @@
+// Coding Ninjas Linked List Solution
+
+
+public class Solution {
+	public static int findNode(LinkedListNode<Integer> head, int n) {
+		if(head==null){
+			return -1;
+		}
+		int count =0;
+		LinkedListNode<Integer> currNode = head;
+		while(currNode!= null && currNode.data!=n){
+			currNode = currNode.next;
+			count++;
+		}
+		if(currNode!=null){
+			return count;
+		}
+		else{
+			return -1;
+		}
+		
+
+	}
+}
