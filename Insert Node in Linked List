@@ -1,0 +1,24 @@
+// Modeule 3 Linked List Coding Ninjas solution
+
+public class Solution {
+
+	public static LinkedListNode<Integer> insert(LinkedListNode<Integer> head, int pos, int data){
+		LinkedListNode<Integer> newNode = new LinkedListNode<Integer>(data);
+		if(pos == 0){
+			newNode.next = head;
+			return newNode;
+		}
+		int count =0;
+		LinkedListNode<Integer> currNode = head;
+		while(count<pos-1 && currNode!=null){
+			count++;
+			currNode = currNode.next;
+		}
+		if(currNode != null){
+			newNode.next = currNode.next;
+			currNode.next = newNode;
+		}
+		
+		return head;
+	}
+}
