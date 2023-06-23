@@ -1,0 +1,17 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313239/offering/4333605/problem/14
+
+public class Solution {
+
+	public static LinkedListNode<Integer> reverseLinkedListRec(LinkedListNode<Integer> head) {
+		//Your code goes here
+        if(head==null || head.next==null){
+            return head;
+        }
+        LinkedListNode<Integer> newNode = reverseLinkedListRec(head.next);
+        LinkedListNode<Integer> newTail = head.next;
+        newTail.next =head;
+        head.next = null;
+        return newNode;
+	}
+
+}
