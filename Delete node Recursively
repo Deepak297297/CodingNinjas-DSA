@@ -1,0 +1,24 @@
+// Coding Ninjas DSA solution
+// Linked List II
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313239/offering/4333603/problem/325
+
+public class Solution {
+
+
+	public static LinkedListNode<Integer> deleteNodeRec(LinkedListNode<Integer> head, int pos) {
+        if(head == null ){
+            return head;
+        }
+        if(pos == 0){
+            head = head.next;
+            return head;
+        }
+        else{
+            head.next = deleteNodeRec(head.next, pos-1);
+            return head;
+        }
+        
+
+	}
+
+}
