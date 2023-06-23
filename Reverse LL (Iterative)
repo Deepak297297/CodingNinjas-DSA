@@ -1,0 +1,21 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313239/offering/4333609/problem/13
+
+public class Solution {
+
+	public static LinkedListNode<Integer> reverse_I(LinkedListNode<Integer> head){
+        if(head==null || head.next == null){
+            return head;
+        }
+        LinkedListNode<Integer> prevNode = head;
+        LinkedListNode<Integer> currNode = head.next;
+        while(currNode!=null){
+            LinkedListNode<Integer> nextNode = currNode.next;
+            currNode.next = prevNode;
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head =prevNode;
+        return head;
+	}
+}
