@@ -1,0 +1,67 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313240/offering/4333652/problem/1474
+
+
+public class Stack {
+    Node head;
+    int size;
+
+    //Define the data members
+
+
+    public Stack() {
+        this.head = null;
+        this.size=0;
+        //Implement the Constructor
+    }
+
+
+
+    /*----------------- Public Functions of Stack -----------------*/
+
+
+    public int getSize() { 
+        return size;
+        //Implement the getSize() function
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+        //Implement the isEmpty() function
+    }
+
+    public void push(int element) {
+        Node newNode = new Node(element);
+        if(head==null){
+            head = newNode;
+        }
+        else{
+            newNode.next = head;
+            head = newNode;
+            
+        }
+        size++;
+        //Implement the push(element) function
+    }
+
+    public int pop() {
+        if(head==null){
+            size=0;
+            return -1;
+        }
+        else{
+            size--;
+            int topElem = head.data;
+            head =head.next;
+            return topElem;
+        }
+        //Implement the pop() function
+    }
+
+    public int top() {
+        if(head==null){
+            return -1;
+        }
+        return head.data;
+        //Implement the top() function
+    }
+}
