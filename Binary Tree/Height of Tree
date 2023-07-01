@@ -1,0 +1,17 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313243/offering/4333714/problem/1564
+
+
+public class Solution {
+
+	public static int height(BinaryTreeNode<Integer> root) {
+		if(root==null){
+			return 0;
+		}
+		int leftHeight = height(root.left);
+		int rightHeight = height(root.right);
+		int totalHeight = Math.max(leftHeight, rightHeight) +1;
+		return totalHeight;
+		//Your code goes here
+	}
+
+}
