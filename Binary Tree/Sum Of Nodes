@@ -1,0 +1,18 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313243/offering/4333705/problem/351
+// Binary Tree I Sum Of Nodes
+
+
+
+public class Solution {
+
+	public static int getSum(BinaryTreeNode<Integer> root) {
+		if(root==null){
+			return 0;
+		}
+		int leftSum = getSum(root.left);
+		int rightSum = getSum(root.right);
+		return root.data+leftSum+rightSum;
+		//Your code goes here.
+	}
+
+}
