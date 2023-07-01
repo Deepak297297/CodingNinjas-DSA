@@ -1,0 +1,16 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313243/offering/4333707/problem/1565
+
+
+public class Solution {
+
+	public static void preOrder(BinaryTreeNode<Integer> root) {
+		if(root == null){
+			return;
+		}
+		System.out.print(root.data+" ");
+		preOrder(root.left);
+		preOrder(root.right);
+		//Your code goes here
+	}
+
+}
