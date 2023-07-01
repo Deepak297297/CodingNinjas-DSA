@@ -1,0 +1,22 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313243/offering/4333711/problem/1155
+
+
+public class Solution {
+
+	public static int countNodesGreaterThanX(BinaryTreeNode<Integer> root, int x) {
+		if(root==null){
+			return 0;
+		}
+		
+		int countLeft =countNodesGreaterThanX(root.left, x);
+		int countRight = countNodesGreaterThanX(root.right, x);
+		int count =countLeft+countRight;
+		if(root.data>x){
+			return count+1;
+		}else{
+			return count;
+		}
+		//Your code goes here
+	}
+
+}
