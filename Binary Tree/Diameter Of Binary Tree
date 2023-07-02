@@ -1,0 +1,26 @@
+//https://classroom.codingninjas.com/app/classroom/me/16426/content/313244/offering/4333727/problem/1157
+
+
+public class Solution {
+	public static int height(BinaryTreeNode<Integer> root){
+		if(root==null){
+			return 0;
+		}
+		int leftHeight = height(root.left);
+		int rightHeight = height(root.right);
+		int totalHeight = Math.max(leftHeight, rightHeight) + 1;
+		return totalHeight;
+	}
+
+	public static int diameterOfBinaryTree(BinaryTreeNode<Integer> root){
+		if(root == null){
+			return 0;
+		}
+		int diam1 = height(root.left)+height(root.right)+1;
+		int diam2 = diameterOfBinaryTree(root.left);
+		int diam3 = diameterOfBinaryTree(root.right);
+		return Math.max(diam1, Math.max(diam2,diam3));
+		//Your code goes here
+	}
+	
+}
