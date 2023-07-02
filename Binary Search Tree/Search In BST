@@ -1,0 +1,19 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313245/offering/4333742/problem/1600
+
+
+public class Solution {
+
+	public static boolean searchInBST(BinaryTreeNode<Integer> root, int k) {
+		if(root==null){
+			return false;
+		}
+		if(root.data>k){
+			return searchInBST(root.left, k);
+		}else if(root.data<k){
+			return searchInBST(root.right, k);
+		}else{
+			return true;
+		}
+		
+	}
+}
