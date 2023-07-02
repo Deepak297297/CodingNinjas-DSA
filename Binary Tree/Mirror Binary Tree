@@ -1,0 +1,21 @@
+// https://classroom.codingninjas.com/app/classroom/me/16426/content/313244/offering/4333722/problem/580
+
+
+public class Solution {
+
+	public static void mirrorBinaryTree(BinaryTreeNode<Integer> root){
+		if(root==null){
+			return;
+		}
+		if(root.left==null || root.right==null){
+			return;
+		}
+		mirrorBinaryTree(root.right);
+		mirrorBinaryTree(root.left);
+		BinaryTreeNode<Integer> temp = root.left;
+		root.left = root.right;
+		root.right = temp;
+		//Your code goes here
+	}
+	
+}
